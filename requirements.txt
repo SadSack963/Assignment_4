@@ -1,4 +1,3 @@
-panda3d==1.10.10
 Pillow==9.0.1
 python-tkdnd==0.2.1
 ttkwidgets==0.12.1
