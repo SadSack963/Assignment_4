@@ -1,0 +1,14 @@
+
+I found a method to create a watermark very quickly using the Pillow package PIL.ImageDraw() function. This worked a treat, and I could show the watermarked image using the show() function. This opened the modified image in the system default picture viewer, and everything looked fine. Problem solved... or so I thought! More on this later.
+Next, I wanted to have an easy way for a user to load an image in the tkinter window. Drag and Drop looked like a very convenient method and there is no need for a file open dialog box.
+There are a few packages on PyPI, but in the end I plumped for python-tkdnd 0.2.1 because it is so easy to install through pip, making the program easy for others to use.
+I chose to use tkinterDnD rather than tkinterDnD2 because it is so straightforward to install using pip. There is a bit of faffing around when installing tkinterDnD2, particularly with tkdndn2.8, so it's not as user-friendly.
+See https://pythonguides.com/python-tkinter-drag-and-drop/
+Also https://github.com/Eliav2/tkinterdnd2
+After an hour or so of research and experimenting, I got the Drag'n'Drop functionality working satisfactorily.
+I wanted to be able to use the mouse to move the watermark around the image. This was relatively easy once I knew how to get at the mouse coordinates. It was very satisfying to drag the text around the screen for the first time!
+Now to get the transparency working inside the tkinter window. This caused me major problems! The initial testing I had done indicated that I could write directly onto the image, and I couldn't understand why it wasn't working. After many hours of reading and failed experiments, I finally realised that I would have to create a separate layer to write the text on, and then create a composite image to display on the canvas. This worked an absolute treat, and it was a great relief to finally have a working solution. There were several occasions where I almost decided to give up and try a different method.
+So, all I had to do was complete the tkinter controls. That was pretty straightforward. It was just a matter of reading the documents, a few searches on the internet and fiddling with the parameters.
+I decided to create my own colour controls rather than use the tkinter colorchooser because you can instantly see the changes rather than going through a dialog box.
+The last step was figuring out how to save the modified file. It was so easy, I was quite surprised. Modifying the filename was also easier than I thought it would be. Using the string rindex() function avoided any issues with paths containing dots.
+All in all, I really enjoyed the project. Though there were some misgivings and frustrations throughout, I am very pleased with the end result. I think the way I approached the problem and achieved the objective may be quite unusual.
